@@ -1,10 +1,3 @@
-
-<p align="center">
-   <a href="https://nlrx-wjc.github.io/react-antd-admin-template/" target="_blank">
-      <img src="./logo.png"/>
-   </a>
-</p>
-
 # 简介
 
 [react-antd-admin-template](https://nlrx-wjc.github.io/react-antd-admin-template/) 是一个基于 `React` 和 `Ant Design` 的后台管理系统模板。它内置了用户登录/登出，动态路由，权限校验，用户管理等典型的业务模型，可以帮助你快速搭建企业级中后台产品原型，是你接私活的不二之选。
