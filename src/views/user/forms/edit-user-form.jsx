@@ -12,7 +12,7 @@ class EditUserForm extends Component {
       currentRowData,
     } = this.props;
     const { getFieldDecorator } = form;
-    const { id, name, role, description } = currentRowData;
+    const { userId, nickname, type, phoneNumber } = currentRowData;
     const formItemLayout = {
       labelCol: {
         sm: { span: 4 },
@@ -31,31 +31,30 @@ class EditUserForm extends Component {
       >
         <Form {...formItemLayout}>
           <Form.Item label="用户ID:">
-            {getFieldDecorator("id", {
-              initialValue: id,
+            {getFieldDecorator("userId", {
+              initialValue: userId,
             })(<Input disabled />)}
           </Form.Item>
           <Form.Item label="用户名称:">
-            {getFieldDecorator("name", {
+            {getFieldDecorator("nickname", {
               rules: [{ required: true, message: "请输入用户名称!" }],
-              initialValue: name,
+              initialValue: nickname,
             })(<Input placeholder="请输入用户名称" />)}
           </Form.Item>
           <Form.Item label="用户角色:">
-            {getFieldDecorator("role", {
-              initialValue: role,
+            {getFieldDecorator("type", {
+              initialValue: type,
             })(
-              <Select style={{ width: 120 }} disabled={id === "admin"}>
-                <Select.Option value="admin">admin</Select.Option>
-                <Select.Option value="editor">editor</Select.Option>
-                <Select.Option value="guest">guest</Select.Option>
+              <Select style={{ width: 120 }} disabled={userId === "ADMIN"}>
+                <Select.Option value="ADMIN">ADMIN</Select.Option>
+                <Select.Option value="USER">USER</Select.Option>
               </Select>
             )}
           </Form.Item>
-          <Form.Item label="用户描述:">
-            {getFieldDecorator("description", {
-              initialValue: description,
-            })(<TextArea rows={4} placeholder="请输入用户描述" />)}
+          <Form.Item label="电话">
+            {getFieldDecorator("phoneNumber", {
+              initialValue: phoneNumber,
+            })(<TextArea rows={4} placeholder="请输入用户电话" />)}
           </Form.Item>
         </Form>
       </Modal>

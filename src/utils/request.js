@@ -1,7 +1,7 @@
 import axios from "axios";
 import store from "@/store";
 import { Modal } from "antd";
-import { getToken } from "@/utils/auth";
+import { getToken,removeToken } from "@/utils/auth";
 import { logout } from "@/store/actions";
 
 //创建一个axios示例
@@ -78,6 +78,10 @@ service.interceptors.response.use(
         onOk() {
           let token = store.getState().user.token;
           store.dispatch(logout(token));
+          //删除存储的token
+          removeToken();
+          //跳转到login
+          store.getState().history.history.go("/#/login");
         },
         onCancel() {
           console.log("Cancel");

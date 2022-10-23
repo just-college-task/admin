@@ -8,7 +8,6 @@ import Settings from "@/components/Settings";
 import Hamburger from "@/components/Hamburger";
 import BreadCrumb from "@/components/BreadCrumb";
 import "./index.less";
-import store from "@/store";
 
 const { Header } = Layout;
 

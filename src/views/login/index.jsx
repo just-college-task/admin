@@ -85,7 +85,7 @@ const Login = (props) => {
               {getFieldDecorator("password", {
                 rules: [
                   {
-                    required: true,
+                    /* required: true, */
                     whitespace: true,
                     message: "请输入密码",
                   },

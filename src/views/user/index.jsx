@@ -16,10 +16,11 @@ class User extends Component {
   };
   getUsers = async () => {
     const result = await getUsers()
-    const { users, status } = result.data
-    if (status === 0) {
+    const { status } = result.data
+    if (status === 200) {
+      console.log("USERS",result.data.data);
       this.setState({
-        users
+        users:result.data.data
       })
     }
   }
@@ -31,12 +32,12 @@ class User extends Component {
   };
 
   handleDeleteUser = (row) => {
-    const { id } = row
-    if (id === "admin") {
+    const { userId } = row
+    if (userId === "ADMIN") {
       message.error("不能删除管理员用户！")
       return
     }
-    deleteUser({id}).then(res => {
+    deleteUser({userId}).then(res => {
       message.success("删除成功")
       this.getUsers();
     })
@@ -49,7 +50,9 @@ class User extends Component {
         return;
       }
       this.setState({ editModalLoading: true, });
-      editUser(values).then((response) => {
+      //找出相应的用户
+      const targetUser=this.state.users.find((item)=>item.userId===values.userId);
+      editUser({...targetUser,...values}).then((response) => {
         form.resetFields();
         this.setState({ editUserModalVisible: false, editUserModalLoading: false });
         message.success("编辑成功!")
@@ -57,7 +60,6 @@ class User extends Component {
       }).catch(e => {
         message.success("编辑失败,请重试!")
       })
-      
     });
   };
 
@@ -74,6 +76,7 @@ class User extends Component {
     });
   };
 
+  //添加用户表单回调
   handleAddUserOk = _ => {
     const { form } = this.addUserFormRef.props;
     form.validateFields((err, values) => {
@@ -91,6 +94,8 @@ class User extends Component {
       })
     });
   };
+
+
   componentDidMount() {
     this.getUsers()
   }
@@ -108,10 +113,10 @@ class User extends Component {
         <br/>
         <Card title={title}>
           <Table bordered rowKey="id" dataSource={users} pagination={false}>
-            <Column title="用户ID" dataIndex="id" key="id" align="center"/>
-            <Column title="用户名称" dataIndex="name" key="name" align="center"/>
-            <Column title="用户角色" dataIndex="role" key="role" align="center"/>
-            <Column title="用户描述" dataIndex="description" key="description" align="center" />
+            <Column title="用户ID" dataIndex="userId" key="userId" align="center"/>
+            <Column title="用户名称" dataIndex="nickname" key="nickname" align="center"/>
+            <Column title="用户角色" dataIndex="type" key="type" align="center"/>
+            <Column title="电话" dataIndex="phoneNumber" key="phoneNumber" align="center" />
             <Column title="操作" key="action" width={195} align="center"render={(text, row) => (
               <span>
                 <Button type="primary" shape="circle" icon="edit" title="编辑" onClick={this.handleEditUser.bind(null,row)}/>

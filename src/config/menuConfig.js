@@ -9,19 +9,19 @@ const menuList = [
     title: "首页",
     path: "/dashboard",
     icon: "home",
-    roles:[Role.User]
+    roles:[Role.User,Role.Admin]
   },
   {
     title: "任教的课",
     path: "/teach",
     icon: "file",
-    roles:[Role.User]
+    roles:[Role.User,Role.Admin]
   },
   {
     title: "引导页",
     path: "/guide",
     icon: "key",
-    roles:[Role.User]
+    roles:[Role.User,Role.Admin]
   },
   {
     title: "权限测试",
@@ -31,22 +31,22 @@ const menuList = [
       {
         title: "权限说明",
         path: "/permission/explanation",
-        roles:[Role.User]
+        roles:[Role.User,Role.Admin]
       },
       {
         title: "admin页面",
         path: "/permission/adminPage",
-        roles:[Role.User]
+        roles:[Role.User,Role.Admin]
       },
       {
         title: "guest页面",
         path: "/permission/guestPage",
-        roles:[Role.User]
+        roles:[Role.User,Role.Admin]
       },
       {
         title: "editor页面",
         path: "/permission/editorPage",
-        roles:[Role.User]
+        roles:[Role.User,Role.Admin]
       },
     ],
   },
@@ -54,22 +54,22 @@ const menuList = [
     title: "组件",
     path: "/components",
     icon: "appstore",
-    roles:[Role.User],
+    roles:[Role.User,Role.Admin],
     children: [
       {
         title: "富文本",
         path: "/components/richTextEditor",
-        roles:[Role.User],
+        roles:[Role.User,Role.Admin],
       },
       {
         title: "Markdown",
         path: "/components/Markdown",
-        roles:[Role.User],
+        roles:[Role.User,Role.Admin],
       },
       {
         title: "拖拽列表",
         path: "/components/draggable",
-        roles:[Role.User],
+        roles:[Role.User,Role.Admin],
       },
     ],
   },
@@ -77,22 +77,22 @@ const menuList = [
     title: "图表",
     path: "/charts",
     icon: "area-chart",
-    roles:[Role.User],
+    roles:[Role.User,Role.Admin],
     children: [
       {
         title: "键盘图表",
         path: "/charts/keyboard",
-        roles:[Role.User],
+        roles:[Role.User,Role.Admin],
       },
       {
         title: "折线图",
         path: "/charts/line",
-        roles:[Role.User],
+        roles:[Role.User,Role.Admin],
       },
       {
         title: "混合图表",
         path: "/charts/mix-chart",
-        roles:[Role.User],
+        roles:[Role.User,Role.Admin],
       },
     ],
   },
@@ -100,7 +100,7 @@ const menuList = [
     title: "路由嵌套",
     path: "/nested",
     icon: "cluster",
-    roles:[Role.User],
+    roles:[Role.User,Role.Admin],
     children: [
       {
         title: "菜单1",
@@ -109,7 +109,7 @@ const menuList = [
           {
             title: "菜单1-1",
             path: "/nested/menu1/menu1-1",
-            roles:[Role.User],
+            roles:[Role.User,Role.Admin],
           },
           {
             title: "菜单1-2",
@@ -118,7 +118,7 @@ const menuList = [
               {
                 title: "菜单1-2-1",
                 path: "/nested/menu1/menu1-2/menu1-2-1",
-                roles:[Role.User],
+                roles:[Role.User,Role.Admin],
               },
             ],
           },
@@ -130,23 +130,23 @@ const menuList = [
     title: "表格",
     path: "/table",
     icon: "table",
-    roles:[Role.User]
+    roles:[Role.User,Role.Admin]
   },
   {
     title: "Excel",
     path: "/excel",
     icon: "file-excel",
-    roles:[Role.User],
+    roles:[Role.User,Role.Admin],
     children: [
       {
         title: "导出Excel",
         path: "/excel/export",
-        roles:[Role.User]
+        roles:[Role.User,Role.Admin]
       },
       {
         title: "上传Excel",
         path: "/excel/upload",
-        roles:[Role.User]
+        roles:[Role.User,Role.Admin]
       }
     ],
   },
@@ -154,25 +154,25 @@ const menuList = [
     title: "Zip",
     path: "/zip",
     icon: "file-zip",
-    roles:[Role.User]
+    roles:[Role.User,Role.Admin]
   },
   {
     title: "剪贴板",
     path: "/clipboard",
     icon: "copy",
-    roles:[Role.User]
+    roles:[Role.User,Role.Admin]
   },
   {
     title: "用户管理",
     path: "/user",
     icon: "usergroup-add",
-    roles:[Role.User]
+    roles:[Role.User,Role.Admin]
   },
   {
     title: "我的信息",
     path: "/about",
     icon: "user",
-    roles:[Role.User]
+    roles:[Role.User,Role.Admin]
   }
 ];
 export default menuList;

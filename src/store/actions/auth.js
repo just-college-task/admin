@@ -8,8 +8,7 @@ export const login = (username, password) => (dispatch) => {
       .then((response) => {
         const { data } = response;
         if (data.status === 200) {
-          console.log(response);
-          const token = response.headers.authorization;
+          const token = "Bearer "+response.data.data;
           dispatch(setUserToken(token));
           setToken(token);
           resolve(data);

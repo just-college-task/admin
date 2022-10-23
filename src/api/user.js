@@ -10,23 +10,22 @@ export function reqUserInfo(data) {
 
 export function getUsers() {
   return request({
-    url: '/user/list',
+    url: '/api/admin/user',
     method: 'get'
   })
 }
 
 export function deleteUser(data) {
   return request({
-    url: '/user/delete',
-    method: 'post',
-    data
+    url: `/api/admin/user?id=${data.userId}`,
+    method: 'delete'
   })
 }
 
 export function editUser(data) {
   return request({
-    url: '/user/edit',
-    method: 'post',
+    url: '/api/admin/user',
+    method: 'put',
     data
   })
 }
@@ -41,7 +40,7 @@ export function reqValidatUserID(data) {
 
 export function addUser(data) {
   return request({
-    url: '/user/add',
+    url: '/auth/signup',
     method: 'post',
     data
   })
