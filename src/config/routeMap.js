@@ -25,6 +25,8 @@ const Clipboard = Loadable({loader: () => import(/*webpackChunkName:'Clipboard'*
 const Error404 = Loadable({loader: () => import(/*webpackChunkName:'Error404'*/'@/views/error/404'),loading: Loading});
 const User = Loadable({loader: () => import(/*webpackChunkName:'User'*/'@/views/user'),loading: Loading});
 const About = Loadable({loader: () => import(/*webpackChunkName:'About'*/'@/views/about'),loading: Loading});
+const Banner = Loadable({loader: () => import(/*webpackChunkName:'About'*/'@/views/banner'),loading: Loading});
+
 
 export default [
   { path: "/dashboard", component: Dashboard, roles: [Role.User,Role.Admin] },
@@ -49,5 +51,6 @@ export default [
   { path: "/clipboard", component: Clipboard, roles: [Role.User,Role.Admin] },
   { path: "/user", component: User, roles: [Role.User,Role.Admin] },
   { path: "/about", component: About, roles: [Role.User,Role.Admin] },
+  { path: "/banner", component: Banner, roles: [Role.User,Role.Admin] },
   { path: "/error/404", component: Error404 },
 ];

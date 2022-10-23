@@ -12,6 +12,24 @@ const menuList = [
     roles:[Role.User,Role.Admin]
   },
   {
+    title: "我的信息",
+    path: "/about",
+    icon: "user",
+    roles:[Role.User,Role.Admin]
+  },
+  {
+    title: "用户管理",
+    path: "/user",
+    icon: "usergroup-add",
+    roles:[Role.User,Role.Admin]
+  },
+  {
+    title: "Banner管理",
+    path: "/banner",
+    icon: "usergroup-add",
+    roles:[Role.User,Role.Admin]
+  },
+  {
     title: "任教的课",
     path: "/teach",
     icon: "file",
@@ -160,18 +178,6 @@ const menuList = [
     title: "剪贴板",
     path: "/clipboard",
     icon: "copy",
-    roles:[Role.User,Role.Admin]
-  },
-  {
-    title: "用户管理",
-    path: "/user",
-    icon: "usergroup-add",
-    roles:[Role.User,Role.Admin]
-  },
-  {
-    title: "我的信息",
-    path: "/about",
-    icon: "user",
     roles:[Role.User,Role.Admin]
   }
 ];
