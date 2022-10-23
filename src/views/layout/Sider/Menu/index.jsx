@@ -8,6 +8,9 @@ import { addTag } from "@/store/actions";
 import { getMenuItemInMenuListByProperty } from "@/utils";
 import menuList from "@/config/menuConfig";
 import "./index.less";
+import Role from "@/config/userRole";
+
+
 const SubMenu = Menu.SubMenu;
 // 重新记录数组顺序
 const reorder = (list, startIndex, endIndex) => {
@@ -27,7 +30,7 @@ class Meun extends Component {
   filterMenuItem = (item) => {
     const { roles } = item;
     const { role } = this.props;
-    if (role === "admin" || !roles || roles.includes(role)) {
+    if (role === Role.Admin || !roles || roles.includes(role)) {
       return true;
     } else if (item.children) {
       // 如果当前用户有此item的某个子item的权限

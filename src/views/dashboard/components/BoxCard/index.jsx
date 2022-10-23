@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import PanThumb from '@/components/PanThumb'
 import Mallki from '@/components//Mallki'
 import './index.less'
+
 class BoxCard extends Component {
   state = {};
   render() {
@@ -20,7 +21,7 @@ class BoxCard extends Component {
           }
         >
           <div style={{ position: 'relative' }}>
-            <PanThumb image={avatar} className="panThumb" />
+            <PanThumb image={avatar?avatar:""} className="panThumb" />
             <Mallki className="mallki-text" text="难凉热血" />
             <div style={{paddingTop:"35px"}} className="progress-item">
               <span>Vue</span>

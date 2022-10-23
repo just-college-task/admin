@@ -4,6 +4,8 @@ import "driver.js/dist/driver.min.css"; // import driver.js css
 import { Button } from "antd";
 import TypingCard from '@/components/TypingCard'
 import steps from "./steps";
+import store from '@/store';
+
 const driver = new Driver({
   animate: true, // 在更改突出显示的元素时是否设置动画，
                   // 当header的position为fixed时，会覆盖元素，这是driver.js的bug，
@@ -19,12 +21,18 @@ const guide = function () {
   driver.defineSteps(steps);
   driver.start();
 };
+
+
+
 const Guide = function () {
   const cardContent = `引导页对于一些第一次进入项目的人很有用，你可以简单介绍下项目的功能。
                        本Demo是基于<a href="https://github.com/kamranahmedse/driver.js" target="_blank">driver.js</a>`
   return (
     <div className="app-container">
       <TypingCard title='新手引导' source={cardContent}/>
+      <div>
+       现在所在位置{store.getState().history.location.pathname}
+      </div>
       <Button type="primary" onClick={guide}>
         打开引导
       </Button>

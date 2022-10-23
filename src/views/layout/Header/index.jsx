@@ -8,6 +8,8 @@ import Settings from "@/components/Settings";
 import Hamburger from "@/components/Hamburger";
 import BreadCrumb from "@/components/BreadCrumb";
 import "./index.less";
+import store from "@/store";
+
 const { Header } = Layout;
 
 const LayoutHeader = (props) => {
@@ -35,7 +37,7 @@ const LayoutHeader = (props) => {
   const onClick = ({ key }) => {
     switch (key) {
       case "logout":
-        handleLogout(token);
+        handleLogout(token);//抹去存储的token
         break;
       default:
         break;
@@ -45,15 +47,6 @@ const LayoutHeader = (props) => {
     <Menu onClick={onClick}>
       <Menu.Item key="dashboard">
         <Link to="/dashboard">首页</Link>
-      </Menu.Item>
-      <Menu.Item key="project">
-        <a
-          target="_blank"
-          href="https://github.com/NLRX-WJC/react-antd-admin-template"
-          rel="noopener noreferrer"
-        >
-          项目地址
-        </a>
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key="logout">注销</Menu.Item>
