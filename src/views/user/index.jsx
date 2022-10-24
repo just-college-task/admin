@@ -100,7 +100,7 @@ class User extends Component {
     this.getUsers()
   }
   render() {
-    const { users } = this.state
+    const { users } = this.state;
     const title = (
       <span>
         <Button type='primary' onClick={this.handleAddUser}>添加用户</Button>

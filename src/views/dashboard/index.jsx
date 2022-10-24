@@ -67,7 +67,7 @@ const Dashboard = () => {
         </Col>
       </Row>
 
-      <Row gutter={8}>
+      {/* <Row gutter={8}>
         <Col
           xs={24}
           sm={24}
@@ -88,7 +88,7 @@ const Dashboard = () => {
         >
           <BoxCard />
         </Col>
-      </Row>
+      </Row> */}
     </div>
   );
 };
