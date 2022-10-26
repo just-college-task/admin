@@ -10,5 +10,5 @@ export default combineReducers({
   app,
   settings,
   tagsView,
-  history
+  history,
 });

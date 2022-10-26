@@ -1,14 +1,14 @@
 import React from "react";
-import { HashRouter, Route, Switch, Redirect} from "react-router-dom";
+import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { getUserInfo } from "@/store/actions";
 import Layout from "@/views/layout";
 import Login from "@/views/login";
-
+import { removeToken } from "./../utils/auth";
 
 class Router extends React.Component {
   render() {
-    const { token, role, getUserInfo } = this.props;
+    let { token, role, getUserInfo } = this.props;
     return (
       <HashRouter>
         <Switch>
@@ -22,8 +22,9 @@ class Router extends React.Component {
                 if (role) {
                   return <Layout />;
                 } else {
-                  console.log("router/index.js 获取个人身份信息",token);
-                  getUserInfo(token).then(() => <Layout />).catch((e) => { alert("router/index.js 获取个人信息失败"); });
+                  getUserInfo(token)
+                    .then(() => <Layout />)
+                    .catch((e) => {});
                 }
               }
             }}

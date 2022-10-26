@@ -3,14 +3,8 @@ import { Form, Input, Select, Modal } from "antd";
 const { TextArea } = Input;
 class EditUserForm extends Component {
   render() {
-    const {
-      visible,
-      onCancel,
-      onOk,
-      form,
-      confirmLoading,
-      currentRowData,
-    } = this.props;
+    const { visible, onCancel, onOk, form, confirmLoading, currentRowData } =
+      this.props;
     const { getFieldDecorator } = form;
     const { userId, nickname, type, phoneNumber } = currentRowData;
     const formItemLayout = {

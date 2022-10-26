@@ -1,7 +1,7 @@
-import request from '@/utils/request'
+import request from "@/utils/request";
 export function transactionList() {
   return request({
-    url: '/transaction/list',
-    method: 'get'
-  })
+    url: "/transaction/list",
+    method: "get",
+  });
 }

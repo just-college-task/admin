@@ -1,22 +1,18 @@
 import * as types from "../action-types";
-import {
-  reqUserInfo
-} from "@/api/user";
-import store from '@/store';
+import { reqUserInfo } from "@/api/user";
+import store from "@/store";
 
 export const getUserInfo = (token) => (dispatch) => {
   return new Promise((resolve, reject) => {
     reqUserInfo(token)
       .then((response) => {
         console.log(response);
-        const {
-          data
-        } = response;
+        const { data } = response;
         if (data.status === 200) {
           const userInfo = data.data;
-          userInfo.role=userInfo.type;//字段冲突
+          userInfo.role = userInfo.type; //字段冲突
           dispatch(setUserInfo(userInfo));
-          console.log("store",store.getState());
+          console.log("store", store.getState());
           resolve(data);
         } else {
           const msg = data.message;
@@ -38,7 +34,7 @@ export const setUserToken = (token) => {
 
 export const setUserInfo = (userInfo) => {
   return {
-    ...userInfo,//要注意userInfo内有type
+    ...userInfo, //要注意userInfo内有type
     type: types.USER_SET_USER_INFO,
   };
 };

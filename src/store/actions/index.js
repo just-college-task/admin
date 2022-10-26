@@ -19,5 +19,5 @@ export {
   emptyTaglist,
   deleteTag,
   closeOtherTags,
-  historyChange
+  historyChange,
 };

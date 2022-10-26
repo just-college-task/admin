@@ -10,7 +10,6 @@ import menuList from "@/config/menuConfig";
 import "./index.less";
 import Role from "@/config/userRole";
 
-
 const SubMenu = Menu.SubMenu;
 // 重新记录数组顺序
 const reorder = (list, startIndex, endIndex) => {

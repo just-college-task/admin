@@ -8,7 +8,7 @@ export const login = (username, password) => (dispatch) => {
       .then((response) => {
         const { data } = response;
         if (data.status === 200) {
-          const token = "Bearer "+response.data.data;
+          const token = "Bearer " + response.data.data;
           dispatch(setUserToken(token));
           setToken(token);
           resolve(data);

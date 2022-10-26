@@ -1,4 +1,4 @@
-import Role from '@/config/userRole';
+import Role from "@/config/userRole";
 
 /**
  * icon:菜单项图标
@@ -9,25 +9,25 @@ const menuList = [
     title: "首页",
     path: "/dashboard",
     icon: "home",
-    roles:[Role.User,Role.Admin]
+    roles: [Role.User, Role.Admin],
   },
   {
     title: "我的信息",
     path: "/about",
     icon: "user",
-    roles:[Role.User,Role.Admin]
+    roles: [Role.User, Role.Admin],
   },
   {
-    title: "用户管理",
+    title: "用户",
     path: "/user",
     icon: "usergroup-add",
-    roles:[Role.Admin]
+    roles: [Role.Admin],
   },
   {
-    title: "Banner管理",
+    title: "轮播图",
     path: "/banner",
     icon: "usergroup-add",
-    roles:[Role.Admin]
+    roles: [Role.Admin],
   },
   // {
   //   title: "任教的课",

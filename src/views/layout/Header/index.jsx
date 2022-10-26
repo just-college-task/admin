@@ -36,7 +36,7 @@ const LayoutHeader = (props) => {
   const onClick = ({ key }) => {
     switch (key) {
       case "logout":
-        handleLogout(token);//抹去存储的token
+        handleLogout(token); //抹去存储的token
         break;
       default:
         break;
