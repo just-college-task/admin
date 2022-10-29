@@ -23,7 +23,7 @@ export default function Banner() {
   };
 
   const getList = async () => {
-    return getBannerList(100).then((response) => {
+    return getBannerList().then((response) => {
       let list = response.data.data;
       return list;
     });
@@ -39,8 +39,8 @@ export default function Banner() {
       });
   };
 
-  const del = (courseId) => {
-    deleteBanner(courseId)
+  const del = (courseId, bannerId) => {
+    deleteBanner(courseId, bannerId)
       .then((res) => {
         console.log(res);
       })
@@ -66,7 +66,7 @@ export default function Banner() {
               <FlexRight>
                 <MyButton
                   onClick={(e) => {
-                    del(v.courseId);
+                    del(v.courseId, v.bannerId);
                   }}
                 >
                   删除记录

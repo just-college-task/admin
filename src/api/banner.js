@@ -1,8 +1,8 @@
 import request from "@/utils/request";
 
-export function getBannerList(size) {
+export function getBannerList() {
   return request({
-    url: `/api/banner/list/${size}`,
+    url: `/api/banner/list`,
     method: "get",
   });
 }
@@ -25,9 +25,9 @@ export function uploadBanner(form) {
   });
 }
 
-export function deleteBanner(courseId) {
+export function deleteBanner(courseId, bannerId) {
   return request({
-    url: `/api/admin/banner?courseId=${courseId}`,
+    url: `/api/admin/banner?courseId=${courseId}&bannerId=${bannerId}`,
     method: "delete",
   });
 }

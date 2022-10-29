@@ -81,7 +81,8 @@ service.interceptors.response.use(
             //删除存储的token
             removeToken();
             //跳转到login
-            store.getState().history.history.go("/#/login");
+            if (store.getState().history)
+              store.getState().history.go("/#/login");
           },
           onCancel() {
             console.log("Cancel");
