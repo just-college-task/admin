@@ -2,13 +2,13 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = (req, res) => {
   let target = "";
-
   // 代理目标地址
   // 这里使用 backend 主要用于区分 vercel serverless 的 api 路径
   if (
     req.url.startsWith("/api") ||
     req.url.startsWith("/auth") ||
-    req.url.startsWith("/banner")
+    req.url.startsWith("/banner") ||
+    req.url.startsWith("/CollegeTask")
   ) {
     target = "http://106.15.2.32:6969";
   }

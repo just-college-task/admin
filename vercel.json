@@ -11,6 +11,10 @@
         {
             "source":"/banner/(.*)",
             "destination":"/api/proxy"
+        },
+        {
+            "source":"/CollegeTask/(.*)",
+            "destination":"/api/proxy"
         }
     ]
 }
