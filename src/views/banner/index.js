@@ -32,7 +32,7 @@ export default function Banner() {
   const add = (form) => {
     uploadBanner(form)
       .then((res) => {
-        console.log(res);
+        initData(); //刷新列表
       })
       .catch((e) => {
         alert("上传失败");
@@ -42,6 +42,13 @@ export default function Banner() {
   const del = (courseId, bannerId) => {
     deleteBanner(courseId, bannerId)
       .then((res) => {
+        //从现在数组中删除掉
+        let resIdx = list.bannerList.findIndex(
+          (item) => item.courseId === courseId
+        );
+        if (resIdx !== -1) {
+          setList({ bannerList: list.bannerList.splice(resIdx, 1) });
+        }
         console.log(res);
       })
       .catch((e) => {
