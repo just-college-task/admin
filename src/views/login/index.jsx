@@ -17,12 +17,11 @@ const Login = (props) => {
     setLoading(true);
     login(username, password)
       .then((data) => {
-        alert("登录成功");
         handleUserInfo(data.token);
       })
       .catch((error) => {
         setLoading(false);
-        alert(error);
+        alert("登录失败");
       });
   };
 

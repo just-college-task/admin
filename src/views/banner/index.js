@@ -30,9 +30,10 @@ export default function Banner() {
   };
 
   const add = (form) => {
-    uploadBanner(form)
+    return uploadBanner(form)
       .then((res) => {
         initData(); //刷新列表
+        return true;
       })
       .catch((e) => {
         alert("上传失败");

@@ -26,7 +26,18 @@ export default function UploadForm(props) {
     let form = new FormData();
     form.append("courseId", id);
     form.append("bannerImg", imageFile);
-    props.submit(form);
+    props
+      .submit(form)
+      .then((res) => {
+        if (res) {
+          //上传成功
+          setPostUrl(null);
+          setId(0);
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   const inputImage = () => {

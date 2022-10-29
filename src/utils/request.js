@@ -68,7 +68,7 @@ service.interceptors.response.use(
     console.log("err" + error); // for debug
     if (error.response) {
       const { status } = error.response;
-      if (status !== 200) {
+      if (status === 401) {
         Modal.confirm({
           title: "确定登出?",
           content:
@@ -76,13 +76,13 @@ service.interceptors.response.use(
           okText: "重新登录",
           cancelText: "取消",
           onOk() {
-            let token = store.getState().user.token;
-            store.dispatch(logout(token));
+            // let token = store.getState().user.token;
+            // store.dispatch(logout(token));
             //删除存储的token
             removeToken();
             //跳转到login
             if (store.getState().history)
-              store.getState().history.go("/#/login");
+              store.getState().history.history.go("/#/login");
           },
           onCancel() {
             console.log("Cancel");
